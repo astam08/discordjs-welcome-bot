@@ -10,14 +10,14 @@ if(!permission) return message.channel.send("You are missing the permission `ADM
 
  let cArgs = args[0]
  
- if(isNaN(cArgs)) return message.channel.send("You must specify a valid id for the welcome channel!")
+ if(isNaN(cArgs)) return message.channel.send("Masukann data dengan benar!")
 	 
  try{
-	 bot.guilds.get(message.guild.id).channels.get(cArgs).send("Welcome channel set!")
+	 bot.guilds.get(message.guild.id).channels.get(cArgs).send("Pesan Selamat datang berhasil di set!")
 	 
  db.set(`${message.guild.id}`, cArgs)
  
- message.channel.send("You have successfully set the welcome channel to <#" + cArgs + ">")
+ message.channel.send("Pesan di set ke  <#" + cArgs + ">")
 return;
  }catch(e){
 	return message.channel.send("Error: missing permissions or channel doesn't exist")
